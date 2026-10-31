@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PCSpecs – Les specs de ton PC en un clic</title>
+<style>
+:root{
+  --bg:#0B0C10; --card:#12131A; --line:#22232D; --text:#FFFFFF; --muted:#A3A5B2; --accent:#C084FC; --chip:#2A1646; --btn1:#7C3AED; --btn2:#6D28D9; --glow:rgba(124,58,237,.28);
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){--bg:#F7F5FB; --card:#FFFFFF; --line:#E3DDF0; --text:#14121C; --muted:#55576A; --accent:#7C3AED; --chip:#EFE7FD; --glow:rgba(124,58,237,.16);}
+}
+:root[data-theme="light"]{--bg:#F7F5FB; --card:#FFFFFF; --line:#E3DDF0; --text:#14121C; --muted:#55576A; --accent:#7C3AED; --chip:#EFE7FD; --glow:rgba(124,58,237,.16);}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.55}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;text-decoration:none}
+.brand img{width:34px;height:auto;border-radius:8px}
+header nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:20px}
+header nav a:hover{color:var(--text)}
+.hero{text-align:center;padding:56px 0 64px;background:radial-gradient(ellipse 60% 60% at 50% 0%,var(--glow),transparent 70%)}
+.hero img{width:150px;height:auto;filter:drop-shadow(0 12px 40px var(--glow))}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.08;margin:22px 0 14px;font-weight:800;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.lead{max-width:560px;margin:0 auto;color:var(--muted);font-size:18px}
+.btn{display:inline-flex;align-items:center;gap:12px;margin-top:30px;padding:16px 30px;border-radius:14px;background:linear-gradient(135deg,var(--btn1),var(--btn2));color:#fff;font-size:18px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px var(--glow);transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.meta{margin-top:14px;color:var(--muted);font-size:13px}
+section{padding:48px 0}
+h2{font-size:28px;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.ic{width:44px;height:44px;border-radius:10px;background:var(--chip);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.ic svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card h3{margin:0 0 4px;font-size:16px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+ol.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;counter-reset:s}
+ol.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 20px 64px;position:relative;font-size:15px}
+ol.steps li::before{content:counter(s);position:absolute;left:18px;top:18px;width:30px;height:30px;border-radius:50%;background:var(--chip);color:var(--accent);font-weight:700;display:flex;align-items:center;justify-content:center}
+ol.steps b{display:block;margin-bottom:2px}
+ol.steps span{color:var(--muted);font-size:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin:10px 0 0;font-size:14px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px;text-align:center;margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <a class="brand" href="#top"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACOCAMAAADpRHFhAAAB/lBMVEWmGPfIG//Sz+A/M2GEQLehfuudk8YGBQsYFSYSBS0TEhwrBm80BYwkCVT7+vxHBrCSJ/oaBEo2NEUoJTalNv1QBswvKEbp5/GEHPohHDJ5GfI7AqnKyNVtRLZqBvFIR1EuFU/a2OZOGJJXVlhIGHKYM/iPJ9TW1do2NTpSFqh4eHpqaW6mpaxqGcpwOreIh441FGtGCJCNF9NqCNWkKfWUk5kkCjhiJZaKQtfg3e1BPVJyWK6pRvtaBOeLaNBIOWy1tLhIJmxRRXRsI65sI8xvaIh7ZrCrVfplV4uCarqcmqY7EomLCPK6uMV8eItrGbBYFMtYIo95I+2NCs9aSIignqlaV2aLebeOhbCtBfodAGV4RsiBPbazp9mPeMaYdeOmheyzmO9HDHuEHbmXSPeJV9OXY+jJNv46J2NXJK1qCLGPM9OmZPa0oeY+AMNjSZmVWuiYiMukmczAv8ZyNc56NuRiXXN+WcbBCP7DJ/5AFl5VNopfUYNgGpuJIL6Af4YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADfjkAjAAAAgHRSTlP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////xUHpOoAABBfSURBVHjazdyJX9tGFgBgd6/x6LAsC/mOb8c2mNjEHIUcEKBsCEeAAklI093tJmm77fZut92r//rOm9ExGo1kY2Dbl19skIz1+c1oNDOSlUDSwLVHK3fufEDid/DwwR0S9CE6bnnB/RgV/3pUS8q3nJBghlvt+278kQX54f67Ynzm/vDy5ctbE8RLiH+8++bNm68+J/HmziM8Aai21W6nt7d6JAwWNgsNo8hIXi4KhUL20fqdd1+/vlMbA1K30ye9PY3FwgIn0qI5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" alt="">PCSpecs</a>
+  <nav><a href="#fonctions">Fonctions</a><a href="#installer">Installation</a><a href="#faq">FAQ</a></nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACOCAMAAADpRHFhAAAB/lBMVEWmGPfIG//Sz+A/M2GEQLehfuudk8YGBQsYFSYSBS0TEhwrBm80BYwkCVT7+vxHBrCSJ/oaBEo2NEUoJTalNv1QBswvKEbp5/GEHPohHDJ5GfI7AqnKyNVtRLZqBvFIR1EuFU/a2OZOGJJXVlhIGHKYM/iPJ9TW1do2NTpSFqh4eHpqaW6mpaxqGcpwOreIh441FGtGCJCNF9NqCNWkKfWUk5kkCjhiJZaKQtfg3e1BPVJyWK6pRvtaBOeLaNBIOWy1tLhIJmxRRXRsI65sI8xvaIh7ZrCrVfplV4uCarqcmqY7EomLCPK6uMV8eItrGbBYFMtYIo95I+2NCs9aSIignqlaV2aLebeOhbCtBfodAGV4RsiBPbazp9mPeMaYdeOmheyzmO9HDHuEHbmXSPeJV9OXY+jJNv46J2NXJK1qCLGPM9OmZPa0oeY+AMNjSZmVWuiYiMukmczAv8ZyNc56NuRiXXN+WcbBCP7DJ/5AFl5VNopfUYNgGpuJIL6Af4YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADfjkAjAAAAgHRSTlP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////xUHpOoAABBfSURBVHjazdyJX9tGFgBgd6/x6LAsC/mOb8c2mNjEHIUcEKBsCEeAAklI093tJmm77fZut92r//rOm9ExGo1kY2Dbl19skIz1+c1oNDOSlUDSwLVHK3fufEDid/DwwR0S9CE6bnnB/RgV/3pUS8q3nJBghlvt+278kQX54f67Ynzm/vDy5ctbE8RLiH+8++bNm68+J/HmziM8Aai21W6nt7d6JAwWNgsNo8hIXi4KhUL20fqdd1+/vlMbA1K30ye9PY3FwgIn0qI5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" alt="Icône de PCSpecs">
+  <h1>Toutes les specs de ton PC, <span>en un clic.</span></h1>
+  <p class="lead">PCSpecs affiche ton processeur, ta carte graphique, ta RAM, ta carte mère, tes disques et ta version de Windows, avec l’utilisation en direct.</p>
+  <a class="btn" id="download" href="https://github.com/thomasduchesne100-ai/PCSpecs/releases/download/V1.0/PCSpecs.exe" target="_blank" rel="noopener">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5L10.5 4.5V11.5H3zM12 4.3L21 3V11.5H12zM3 12.5H10.5V19.5L3 18.5zM12 12.5H21V21L12 19.7z"/></svg>
+    Télécharger pour Windows
+  </a>
+  <div class="meta">Gratuit • Version 1.0 • Windows 10 / 11 (64 bits) • 147 Mo</div>
+</div>
+
+<section id="fonctions">
+  <h2>Tout ce qu’il faut savoir sur ta machine</h2>
+  <p class="sub">Ouvre l’appli, tout est déjà là.</p>
+  <div class="grid">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></div><h3>CPU</h3><p>Modèle, cœurs, threads et fréquence.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="2"/><circle cx="9" cy="12" r="2.5"/><circle cx="16" cy="12" r="2.5"/></svg></div><h3>GPU</h3><p>Ta ou tes cartes graphiques et leur pilote.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="8" rx="1.5"/><path d="M6 11.5v1M10 11.5v1M14 11.5v1M18 11.5v1M5 16v2M9 16v2M13 16v2M17 16v2"/></svg></div><h3>RAM</h3><p>Capacité totale, nombre de barrettes et vitesse.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="7" y="7" width="6" height="6" rx="1"/><path d="M16 7h1M16 11h1M7 17h6M16 17h1"/></svg></div><h3>Motherboard</h3><p>Fabricant, modèle et version du BIOS.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg></div><h3>Storage</h3><p>Tous tes disques avec leur capacité.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 5.5l7.5-1v7H3zM12 4.3L21 3v8.5h-9zM3 12.5h7.5v7L3 18.5zM12 12.5h9V21l-9-1.3z"/></svg></div><h3>Windows</h3><p>Édition, version, build et architecture.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M7 15l3.5-4 3 2.5L17 9"/></svg></div><h3>Performance en direct</h3><p>CPU, GPU et RAM en pourcentage, mis à jour chaque seconde.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg></div><h3>Températures</h3><p>Affichées quand ton PC les expose à Windows.</p></div>
+  </div>
+</section>
+
+<section id="installer">
+  <h2>Installation en 3 étapes</h2>
+  <p class="sub">Pas de programme d’installation : un seul fichier.</p>
+  <ol class="steps">
+    <li><b>Télécharge</b><span>Clique sur « Télécharger pour Windows » pour récupérer <code>PCSpecs.exe</code>.</span></li>
+    <li><b>Place-le</b><span>Mets le fichier dans un dossier fixe, par exemple <code>C:\PCSpecs</code>.</span></li>
+    <li><b>Lance-le</b><span>Double-clique sur <code>PCSpecs.exe</code>. C’est tout.</span></li>
+  </ol>
+</section>
+
+<section id="faq">
+  <h2>Questions fréquentes</h2>
+  <p class="sub">&nbsp;</p>
+  <details><summary>Windows affiche « Windows a protégé votre ordinateur ». Que faire ?</summary><p>C’est normal pour une petite appli non signée. Clique sur « Informations complémentaires », puis sur « Exécuter quand même ».</p></details>
+  <details><summary>L’appli est-elle gratuite et sûre ?</summary><p>Elle est gratuite. PCSpecs ne fait que lire les informations de ton PC, rien n’est envoyé sur Internet.</p></details>
+  <details><summary>Pourquoi les températures ne s’affichent pas ?</summary><p>Windows ne donne pas toujours accès aux capteurs. Sur certains PC, l’information est simplement indisponible.</p></details>
+  <details><summary>Comment mettre à jour ou désinstaller ?</summary><p>Pour mettre à jour, remplace l’ancien <code>PCSpecs.exe</code> par le nouveau. Pour désinstaller, supprime simplement le fichier.</p></details>
+</section>
+</main>
+
+<footer>PCSpecs Desktop • Fait pour Windows</footer>
+</div>
+</body>
+</html>
