@@ -62,7 +62,7 @@ dotnet build
 
 ## 📦 Publier en fichier EXE
 
-Pour générer une version autonome de PCSpecs :
+Pour générer une version autonome de PCSpecs dans Windows PowerShell :
 
 ```Windows PowerShell
 dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
