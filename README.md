@@ -64,14 +64,8 @@ dotnet build
 
 Pour générer une version autonome de PCSpecs :
 
-```powershell
+```Windows PowerShell
 dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
-```
-
-Le fichier publié se trouve dans :
-
-```text
-bin/Release/net9.0-windows/win-x64/publish/
 ```
 
 ## ⚠️ Informations sur les capteurs
